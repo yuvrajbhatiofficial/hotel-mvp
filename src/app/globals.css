@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  --peach-main: #f7d9c6;
+  --peach-secondary: #fbe7da;
+  --bg-light: #fdf0e7;
+  --ink-primary: #1d1a1c;
+  --ink-muted: #5c5156;
+  --ink-light-muted: #8a7f83;
+  --accent-booking: #f39419;
+  --accent-star: #f7c325;
+  --white: #ffffff;
+}
+
+@theme inline {
+  --color-peach-main: var(--peach-main);
+  --color-peach-secondary: var(--peach-secondary);
+  --color-bg-light: var(--bg-light);
+  --color-ink-primary: var(--ink-primary);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-light-muted: var(--ink-light-muted);
+  --color-accent-booking: var(--accent-booking);
+  --color-accent-star: var(--accent-star);
+
+  --font-sans: var(--font-urbanist), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-gilda-display), Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--ink-primary);
+  font-family: var(--font-urbanist), ui-sans-serif, system-ui, sans-serif;
+}
+
+@keyframes ken-burns-slow {
+  0% {
+    transform: scale(1.08) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.03) translate3d(-1%, -0.5%, 0);
+  }
+  100% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+.animate-ken-burns {
+  animation: ken-burns-slow 24s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-ken-burns {
+    animation: none;
+    transform: scale(1);
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fdf0e7;
+}
+::-webkit-scrollbar-thumb {
+  background: #d8bfb0;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b59785;
+}
